@@ -9,7 +9,7 @@ def test_greeting():
     name = "Анна"
     age = 25
     # TODO Сформируйте нужную строку
-    output = ("Привет, " + name + "!" + " Тебе " + str(age) + " лет.")
+    output = f"Привет, {name}! Тебе {age} лет."
 
     # Проверяем результат
     assert output == "Привет, Анна! Тебе 25 лет."
@@ -83,13 +83,8 @@ def test_dicts():
     first = ["a", "b", "c", "d", "e"]
     second = [1, 2, 3, 4, 5]
     # TODO создайте словарь
-    d = {
-        first[0]: second[0],
-        first[1]: second[1],
-        first[2]: second[2],
-        first[3]: second[3],
-        first[4]: second[4],
-    }
+
+    d = dict(zip(first, second))
 
     assert isinstance(d, dict)
     assert len(d) == 5
